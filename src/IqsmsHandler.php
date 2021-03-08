@@ -75,7 +75,7 @@ class IqsmsHandler extends SmsHandler
         ]);
     }
 
-    protected function _send($to, $text, $sender = null) {
+    public function send($to, $text, $sender = null) {
         $fp = fsockopen($this->host, $this->port, $errno, $errstr);
         if (!$fp) {
             return "errno: $errno \nerrstr: $errstr\n";
